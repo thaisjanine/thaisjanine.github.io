@@ -323,7 +323,14 @@
       </div>
 
       <!-- FORM -->
-      <form id="mentoriaForm" onsubmit="submitForm(event)">
+      <form id="mentoriaForm" action="https://formsubmit.co/thaisjanine7@gmail.com" method="POST">
+
+        <!-- FormSubmit configuration: responses are sent to Thaís by email -->
+        <input type="hidden" name="_subject" value="Nova solicitação de mentoria pelo site" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://thaisjanine.github.io/formulario-mentoria.html?success=1" />
+        <input type="hidden" name="_url" value="https://thaisjanine.github.io/formulario-mentoria.html" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
         <!-- Section 1: Personal info -->
         <p class="section-title lang-pt">Informações pessoais</p>
@@ -333,7 +340,7 @@
           <label class="lang-pt">Nome completo <span class="required">*</span></label>
           <label class="lang-en">Full name <span class="required">*</span></label>
           <input type="text" name="nome" required placeholder="Seu nome completo" class="lang-pt" />
-          <input type="text" name="nome_en" required placeholder="Your full name" class="lang-en" style="display:none;" />
+          <input type="text" name="nome_en" placeholder="Your full name" class="lang-en" style="display:none;" />
         </div>
 
         <div class="form-group">
@@ -434,7 +441,7 @@
           <label class="lang-pt">O que você busca com a mentoria? <span class="required">*</span></label>
           <label class="lang-en">What are you hoping to get from this session? <span class="required">*</span></label>
           <textarea name="objetivo" required placeholder="Conte um pouco sobre sua situação e o que espera da sessão..." class="lang-pt"></textarea>
-          <textarea name="objetivo_en" required placeholder="Tell me a bit about your situation and what you hope to get from our session..." class="lang-en" style="display:none;"></textarea>
+          <textarea name="objetivo_en" placeholder="Tell me a bit about your situation and what you hope to get from our session..." class="lang-en" style="display:none;"></textarea>
         </div>
 
         <div class="form-group">
@@ -561,10 +568,21 @@
       });
     }
 
-    // Form submit — shows success message
-    // EDIT: Replace this with your actual form backend (Formspree, Google Forms, etc.)
-    function submitForm(e) {
-      e.preventDefault();
+    // Require at least one service before submitting
+    document.getElementById('mentoriaForm').addEventListener('submit', function(e) {
+      const selectedServices = document.querySelectorAll('input[name="servico"]:checked');
+      if (selectedServices.length === 0) {
+        e.preventDefault();
+        const lang = document.body.getAttribute('data-lang');
+        alert(lang === 'pt'
+          ? 'Selecione pelo menos um serviço de interesse.'
+          : 'Please select at least one service.');
+      }
+    });
+
+    // After FormSubmit redirects back, show the site's own success message
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === '1') {
       document.getElementById('mentoriaForm').style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
