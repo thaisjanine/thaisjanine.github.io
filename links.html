@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Links oficiais de Thaís Janine: mentoria, carreira internacional, mineração, Austrália e livros." />
+  <title>Thaís Janine | Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --navy-light: #1a3045;
+      --copper: #be7530;
+      --copper-light: #dc984f;
+      --cream: #f7f1e9;
+      --white: #ffffff;
+      --muted: #66717d;
+      --border: rgba(13,27,42,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      padding: 42px 18px;
+      font-family: "DM Sans", sans-serif;
+      color: var(--navy);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(190,117,48,0.17), transparent 28%),
+        radial-gradient(circle at 90% 100%, rgba(13,27,42,0.12), transparent 32%),
+        var(--cream);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .profile-photo {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid var(--white);
+      box-shadow: 0 10px 30px rgba(13,27,42,0.18);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 8vw, 42px);
+      line-height: 1.1;
+    }
+
+    .handle {
+      margin-top: 7px;
+      color: var(--copper);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .intro {
+      max-width: 480px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .featured {
+      display: block;
+      margin-bottom: 14px;
+      padding: 22px;
+      border-radius: 18px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      box-shadow: 0 14px 34px rgba(13,27,42,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .featured:hover,
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 17px 38px rgba(13,27,42,0.2);
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--copper-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .featured-title,
+    .link-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .featured-desc {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-card {
+      display: block;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255,255,255,0.86);
+      box-shadow: 0 7px 20px rgba(13,27,42,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .link-desc {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .arrow { color: var(--copper); font-size: 20px; }
+
+    .coming-soon {
+      cursor: default;
+      background: rgba(255,255,255,0.52);
+    }
+
+    .coming-soon:hover { transform: none; box-shadow: 0 7px 20px rgba(13,27,42,0.07); }
+
+    .badge {
+      flex-shrink: 0;
+      padding: 5px 9px;
+      border-radius: 100px;
+      background: rgba(190,117,48,0.12);
+      color: var(--copper);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .social {
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .social a { color: var(--navy); }
+
+    @media (max-width: 480px) {
+      body { padding-top: 30px; }
+      .profile-photo { width: 96px; height: 96px; }
+      .featured, .link-card { border-radius: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="profile">
+      <img class="profile-photo" src="YOUR_PHOTO.jpeg" alt="Thaís Janine" />
+      <h1>Thaís Janine</h1>
+      <p class="handle">@thaisjanine</p>
+      <p class="intro">Engenharia, mineração, carreira internacional, Austrália e livros.</p>
+    </header>
+
+    <a class="featured" href="formulario-mentoria.html">
+      <span class="eyebrow">Mentoria e consultoria</span>
+      <span class="featured-title">Construa sua carreira com mais direção <span>→</span></span>
+      <span class="featured-desc">Conheça os serviços, conte um pouco sobre seu momento e agende sua sessão.</span>
+    </a>
+
+    <section class="links" aria-label="Links principais">
+      <a class="link-card" href="https://thaisjanine.github.io/">
+        <span class="link-title">🌐 Meu site <span class="arrow">→</span></span>
+        <span class="link-desc">Minha trajetória, serviços e conteúdos sobre mineração e carreira.</span>
+      </a>
+
+      <a class="link-card" href="https://preply.com/en/?pref=MzIzNzc0MQ==&amp;id=1762915330.222845&amp;ep=a2" target="_blank" rel="noopener noreferrer sponsored">
+        <span class="link-title">🗣️ Desconto na Preply <span class="arrow">→</span></span>
+        <span class="link-desc">Aulas de inglês e outros idiomas com condições especiais pelo meu link.</span>
+      </a>
+
+      <div class="link-card coming-soon" aria-disabled="true">
+        <span class="link-title">⛏️ eBook sobre FIFO <span class="badge">Em breve</span></span>
+        <span class="link-desc">Um guia sobre trabalho e rotina FIFO na mineração australiana.</span>
+      </div>
+
+      <div class="link-card coming-soon" aria-disabled="true">
+        <span class="link-title">📚 Meu canal de livros <span class="badge">Adicionar link</span></span>
+        <span class="link-desc">Leituras, resenhas e conversas sobre livros.</span>
+      </div>
+    </section>
+
+    <footer>
+      <p class="social"><a href="https://www.instagram.com/thaisjanine/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.linkedin.com/in/thais-janine/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      <p>© 2026 Thaís Janine</p>
+    </footer>
+  </main>
+</body>
+</html>
