@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thaís Janine Oliveira | Geotechnical Engineer</title>
+<meta name="description" content="MSc Geotechnical Engineer with 8+ years across underground hard-rock and coal mining, and open-pit iron ore, in Brazil, France and Australia. Perth, WA · Australian Permanent Resident." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --navy:#0d1b2a;
+    --navy-mid:#16283b;
+    --navy-soft:#20374f;
+    --copper:#b87333;
+    --copper-light:#d4914a;
+    --copper-pale:#f0e0cc;
+    --stone:#4a5568;
+    --stone-light:#7c8798;
+    --cream:#faf8f4;
+    --paper:#ffffff;
+    --line:rgba(13,27,42,0.12);
+    --line-strong:rgba(13,27,42,0.22);
+    --font-display:'Playfair Display', serif;
+    --font-body:'DM Sans', sans-serif;
+    --font-mono: 'DM Sans', sans-serif;
+    --radius-sm:6px;
+    --radius-md:10px;
+    --shadow-sm:0 2px 14px rgba(13,27,42,0.07);
+    --shadow-md:0 10px 34px rgba(13,27,42,0.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--cream);
+    color:var(--navy);
+    line-height:1.7;
+    font-size:16px;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .section{padding:100px 0;}
+  .section-alt{background:var(--paper);}
+  .section-navy{background:var(--navy);color:var(--cream);}
+
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.22;color:var(--navy);}
+  .section-navy h2, .section-navy h3{color:var(--cream);}
+  h2{font-size:clamp(28px,3.6vw,38px);}
+  h3{font-size:clamp(19px,2.2vw,23px);}
+
+  .kicker{
+    font-size:13px;
+    font-weight:600;
+    color:var(--copper);
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-navy .kicker{color:var(--copper-light);}
+
+  .lede{
+    max-width:640px;
+    color:var(--stone);
+    font-size:17px;
+  }
+  .section-navy .lede{color:rgba(250,248,244,0.72);}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 26px;
+    border-radius:var(--radius-sm);
+    font-family:var(--font-body);
+    font-size:14.5px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .2s ease;
+    border:1.5px solid transparent;
+  }
+  .btn-primary{background:var(--copper);color:#fff;border-color:var(--copper);}
+  .btn-primary:hover{background:var(--copper-light);border-color:var(--copper-light);}
+  .btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-outline-light{background:transparent;color:var(--cream);border-color:rgba(250,248,244,0.4);}
+  .btn-outline-light:hover{background:rgba(250,248,244,0.1);border-color:rgba(250,248,244,0.7);}
+
+  /* ============ NAVBAR ============ */
+  .navbar{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(13,27,42,0.94);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    height:68px;display:flex;align-items:center;
+  }
+  .navbar .container{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav-brand{display:flex;flex-direction:column;line-height:1.1;}
+  .nav-brand .name{font-family:var(--font-display);font-size:19px;font-weight:700;color:#fff;letter-spacing:-0.2px;}
+  .nav-brand .role{font-size:10.5px;letter-spacing:1px;color:var(--copper-light);text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;align-items:center;gap:26px;}
+  .nav-links a{color:rgba(255,255,255,0.72);font-size:13.5px;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links .nav-cta{
+    background:var(--copper);color:#fff;padding:9px 18px;border-radius:100px;
+    box-shadow:0 6px 18px rgba(184,115,51,0.35);
+  }
+  .nav-links .nav-cta:hover{background:var(--copper-light);}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;}
+  .mobile-menu{display:none;}
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-toggle{display:block;}
+    .mobile-menu{
+      display:block;position:fixed;top:68px;left:0;right:0;background:var(--navy-mid);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;z-index:999;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-menu.open{max-height:420px;}
+    .mobile-menu a{display:block;padding:14px 24px;color:rgba(255,255,255,0.85);font-size:15px;border-bottom:1px solid rgba(255,255,255,0.06);}
+    .mobile-menu a.nav-cta{color:var(--copper-light);font-weight:600;}
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    padding:150px 0 90px;
+    background:var(--navy);
+    color:var(--cream);
+    overflow:hidden;
+  }
+  .hero-contours{position:absolute;inset:0;opacity:0.16;pointer-events:none;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    gap:56px;
+    align-items:start;
+    position:relative;
+    z-index:1;
+  }
+  .hero-eyebrow{
+    font-size:13px;letter-spacing:0.5px;color:var(--copper-light);font-weight:600;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(38px,5.6vw,60px);
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .hero .role-line{
+    font-size:clamp(17px,2.1vw,20px);
+    color:var(--copper-light);
+    font-weight:500;
+    margin-bottom:22px;
+  }
+  .hero p.intro{
+    max-width:560px;
+    color:rgba(250,248,244,0.78);
+    font-size:16.5px;
+    margin-bottom:32px;
+  }
+  .hero .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+
+  .plate{
+    background:var(--navy-mid);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:var(--radius-md);
+    padding:30px 28px;
+  }
+  .plate-title{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(250,248,244,0.45);
+    padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .plate-row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .plate-row:last-child{border-bottom:none;}
+  .plate-label{font-size:12.5px;color:rgba(250,248,244,0.5);}
+  .plate-value{font-size:13.5px;font-weight:600;color:#fff;text-align:right;max-width:58%;}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+  }
+
+  /* ============ PROFILE ============ */
+  .tag-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px;}
+  .tag{
+    font-size:13px;padding:7px 14px;border-radius:100px;background:var(--copper-pale);
+    color:var(--navy);font-weight:500;border:1px solid rgba(184,115,51,0.25);
+  }
+  .profile-facts{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px;}
+  .profile-fact-label{font-size:12px;letter-spacing:0.8px;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:10px;}
+  @media (max-width:700px){.profile-facts{grid-template-columns:1fr;}}
+
+  /* ============ TIMELINE (stratigraphic column) ============ */
+  .timeline{position:relative;margin-top:50px;}
+  .timeline::before{
+    content:'';position:absolute;left:120px;top:0;bottom:0;width:3px;
+    background:repeating-linear-gradient(
+      to bottom,
+      var(--copper) 0 8px,
+      var(--copper-light) 8px 16px,
+      var(--stone-light) 16px 26px,
+      var(--copper-pale) 26px 34px
+    );
+    border-radius:2px;
+    opacity:0.85;
+  }
+  @media (max-width:700px){.timeline::before{left:0;}}
+
+  .tl-item{
+    position:relative;
+    padding-left:160px;
+    margin-bottom:52px;
+  }
+  .tl-item:last-child{margin-bottom:0;}
+  @media (max-width:700px){.tl-item{padding-left:26px;}}
+
+  .tl-years{
+    position:absolute;left:0;top:2px;width:96px;text-align:right;
+    font-size:13px;font-weight:600;color:var(--stone);
+  }
+  @media (max-width:700px){.tl-years{position:static;text-align:left;display:block;margin-bottom:8px;}}
+
+  .tl-node{
+    position:absolute;left:114px;top:5px;width:15px;height:15px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--copper);
+  }
+  @media (max-width:700px){.tl-node{left:-8px;}}
+
+  .tl-role{font-size:19px;font-weight:700;font-family:var(--font-display);}
+  .tl-org{font-size:14.5px;color:var(--copper);font-weight:600;margin-top:2px;}
+  .tl-meta{font-size:13px;color:var(--stone-light);margin-bottom:14px;}
+  .tl-item ul{margin-top:2px;}
+  .tl-item li{
+    position:relative;padding-left:18px;font-size:15px;color:var(--stone);margin-bottom:8px;max-width:640px;
+  }
+  .tl-item li::before{content:'—';position:absolute;left:0;color:var(--copper);}
+
+  /* ============ PROJECT CARDS ============ */
+  .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:46px;}
+  @media (max-width:800px){.project-grid{grid-template-columns:1fr;}}
+  .project-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+  }
+  .project-head{
+    background:var(--navy);
+    color:#fff;
+    padding:16px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:10px;
+  }
+  .project-head .p-num{font-size:12px;color:var(--copper-light);font-weight:600;letter-spacing:0.5px;}
+  .project-head .p-org{font-size:12px;color:rgba(255,255,255,0.55);text-align:right;}
+  .project-body{padding:24px 22px 26px;}
+  .project-body h3{margin-bottom:4px;}
+  .project-loc{font-size:13px;color:var(--stone-light);margin-bottom:14px;}
+  .project-body p{font-size:14.5px;color:var(--stone);}
+  .project-stat{
+    display:inline-block;margin-top:16px;font-size:13px;font-weight:600;
+    color:var(--copper);background:var(--copper-pale);padding:6px 12px;border-radius:6px;
+  }
+
+  /* ============ PUBLICATIONS ============ */
+  .pub-item{
+    display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);
+  }
+  .pub-item:last-child{border-bottom:none;}
+  .pub-year{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--copper);min-width:60px;}
+  .pub-title{font-size:16px;font-weight:600;margin-bottom:6px;}
+  .pub-venue{font-size:13.5px;color:var(--stone-light);margin-bottom:8px;}
+  .pub-link{font-size:13.5px;color:var(--copper);font-weight:600;border-bottom:1px solid var(--copper);}
+
+  /* ============ EXPERTISE ============ */
+  .expertise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:46px;}
+  @media (max-width:700px){.expertise-grid{grid-template-columns:1fr;}}
+  .expertise-group h4{font-size:14px;color:var(--copper-light);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:14px;}
+  .section-navy .expertise-group h4{color:var(--copper-light);}
+  .expertise-group .tag{background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.16);}
+
+  /* ============ EDUCATION / TRAINING ============ */
+  .edu-item{padding:20px 0;border-bottom:1px solid var(--line);}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-degree{font-size:16.5px;font-weight:700;font-family:var(--font-display);}
+  .edu-school{font-size:14px;color:var(--copper);margin-top:2px;}
+  .edu-meta{font-size:13px;color:var(--stone-light);margin-top:4px;}
+
+  table.train-table{width:100%;border-collapse:collapse;margin-top:46px;}
+  table.train-table th{
+    text-align:left;font-size:12px;letter-spacing:0.6px;text-transform:uppercase;color:var(--copper);
+    padding:10px 14px;border-bottom:2px solid var(--line-strong);
+  }
+  table.train-table td{
+    padding:12px 14px;font-size:14px;color:var(--stone);border-bottom:1px solid var(--line);
+  }
+  table.train-table tr:last-child td{border-bottom:none;}
+  .train-wrap{overflow-x:auto;}
+
+  /* ============ CONTACT / FOOTER ============ */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{
+    background:var(--navy-mid);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);
+    padding:22px 24px;display:flex;flex-direction:column;gap:6px;
+  }
+  .contact-card .c-label{font-size:11.5px;letter-spacing:0.8px;text-transform:uppercase;color:rgba(250,248,244,0.45);}
+  .contact-card .c-value{font-size:16px;font-weight:600;color:#fff;}
+  .contact-card a.c-value:hover{color:var(--copper-light);}
+
+  footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.08);padding:34px 0;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .footer-brand{font-family:var(--font-display);font-size:16px;color:#fff;font-weight:700;}
+  .footer-brand span{color:var(--copper);}
+  .footer-copy{font-size:12.5px;color:rgba(250,248,244,0.4);}
+
+  ::selection{background:var(--copper-pale);color:var(--navy);}
+  :focus-visible{outline:2px solid var(--copper);outline-offset:2px;}
+  @media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <span class="name">Thaís Janine</span>
+        <span class="role">Geotechnical Engineer</span>
+      </div>
+      <div class="nav-links">
+        <a href="#profile">Profile</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#education">Education</a>
+        <a href="CV_Thais_Janine_2026_9.pdf" class="nav-cta" target="_blank">Download CV</a>
+      </div>
+      <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#profile" onclick="toggleMenu()">Profile</a>
+    <a href="#experience" onclick="toggleMenu()">Experience</a>
+    <a href="#projects" onclick="toggleMenu()">Projects</a>
+    <a href="#publications" onclick="toggleMenu()">Publications</a>
+    <a href="#expertise" onclick="toggleMenu()">Expertise</a>
+    <a href="#education" onclick="toggleMenu()">Education</a>
+    <a href="CV_Thais_Janine_2026_9.pdf" class="nav-cta" target="_blank">Download CV</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <svg class="hero-contours" viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-50,120 C 200,60 400,180 650,110 S 1100,60 1250,140" stroke="#d4914a" stroke-width="1.5" fill="none"/>
+      <path d="M-50,220 C 220,170 420,280 680,210 S 1100,170 1250,240" stroke="#d4914a" stroke-width="1.5" fill="none"/>
+      <path d="M-50,320 C 240,270 460,380 700,310 S 1100,270 1250,340" stroke="#d4914a" stroke-width="1.5" fill="none"/>
+      <path d="M-50,420 C 260,370 480,480 720,410 S 1100,370 1250,440" stroke="#d4914a" stroke-width="1.5" fill="none"/>
+      <path d="M-50,520 C 280,470 500,580 740,510 S 1100,470 1250,540" stroke="#d4914a" stroke-width="1.5" fill="none"/>
+    </svg>
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-eyebrow">Underground &amp; open-pit mining · Perth, WA · Australian Permanent Resident</span>
+        <h1>Thaís Janine Oliveira</h1>
+        <p class="role-line">MSc Geotechnical Engineer — Ground Support, Strata Control &amp; Geotechnical Risk · MAusIMM</p>
+        <p class="intro">Eight-plus years designing and managing ground support and geotechnical risk across underground hard-rock and coal mining, and open-pit iron ore — from strata control on an active longwall to tailings dam monitoring and a stope-dilution model built from her own Master's research.</p>
+        <div class="btn-row">
+          <a href="#experience" class="btn btn-primary">See my experience</a>
+          <a href="CV_Thais_Janine_2026_9.pdf" class="btn btn-outline-light" target="_blank">Download CV</a>
+          <a href="https://www.linkedin.com/in/thais-janine" class="btn btn-outline-light" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="plate-title">At a glance</div>
+        <div class="plate-row"><span class="plate-label">Experience</span><span class="plate-value">8+ years</span></div>
+        <div class="plate-row"><span class="plate-label">Countries</span><span class="plate-value">Brazil · France · Australia</span></div>
+        <div class="plate-row"><span class="plate-label">Sectors</span><span class="plate-value">Underground hard-rock &amp; coal, open-pit iron ore</span></div>
+        <div class="plate-row"><span class="plate-label">Current role</span><span class="plate-value">Underground Geotechnical Engineer, Anglo American</span></div>
+        <div class="plate-row"><span class="plate-label">Based in</span><span class="plate-value">Perth, WA · available for FIFO</span></div>
+        <div class="plate-row"><span class="plate-label">Work rights</span><span class="plate-value">Australian Permanent Resident</span></div>
+        <div class="plate-row"><span class="plate-label">Education</span><span class="plate-value">2x Master's — USP &amp; Mines Nancy</span></div>
+        <div class="plate-row"><span class="plate-label">Languages</span><span class="plate-value">English, Portuguese, French</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PROFILE ============ -->
+  <section class="section" id="profile">
+    <div class="container">
+      <span class="kicker">Profile</span>
+      <h2>A geotechnical engineer built across three mining cultures</h2>
+      <p class="lede" style="margin-top:18px;">MSc Geotechnical Engineer with 8+ years of experience across underground hard-rock, coal, and open-pit iron ore mining, across Brazil, France and Australia. Strong background in ground support design, based on empirical (CMRR, ALTS) and numerical modelling methods (RS2, RS3, Slide2), strata control, and geotechnical risk management, including geotechnical monitoring of tailings dams and water-supply structures, and leading the geotechnical investigation and recovery of an underground decline. Experience working within statutory and international dam safety frameworks (PHMP, TARPs, GISTM) and engaging across technical services, mine planning and operations.</p>
+
+      <div class="profile-facts">
+        <div>
+          <div class="profile-fact-label">Mining methods</div>
+          <div class="tag-row">
+            <span class="tag">Open Stope</span><span class="tag">VRM</span><span class="tag">Sublevel Stope</span><span class="tag">Room &amp; Pillar</span><span class="tag">Longwall</span>
+          </div>
+        </div>
+        <div>
+          <div class="profile-fact-label">Software</div>
+          <div class="tag-row">
+            <span class="tag">Rocscience (Slide2/3, RS2/3, Wedge)</span><span class="tag">Leapfrog</span><span class="tag">Deswik</span><span class="tag">GEM4D</span><span class="tag">Map3D</span><span class="tag">Maptek</span><span class="tag">Power BI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <span class="kicker">Professional experience</span>
+      <h2>Career timeline</h2>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-years">2023 — Present</div>
+          <div class="tl-node"></div>
+          <div class="tl-role">Underground Geotechnical Engineer</div>
+          <div class="tl-org">Anglo American</div>
+          <div class="tl-meta">Australia · Underground coal mine</div>
+          <ul>
+            <li>Designs ground support for faceroad, gateroad and tailgate layouts using CMRR and ALTS empirical methods, integrating borehole data, in-situ stress, structural geology and telltale monitoring.</li>
+            <li>Ensures compliance with the Strata PHMP and TARPs, including review and update of strata control documentation.</li>
+            <li>Analyses shield leg pressure and periodic weighting trends from LVI/SCADA data to inform longwall face advance and anticipate strata response.</li>
+            <li>Conducts monthly LiDAR and photogrammetric surveys (Maptek) of the mine portal walls to monitor ground movement.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-years">2021 — 2023</div>
+          <div class="tl-node"></div>
+          <div class="tl-role">Senior Geotechnical Engineer</div>
+          <div class="tl-org">Vale S.A.</div>
+          <div class="tl-meta">Brazil · Iron ore, open-pit mine</div>
+          <ul>
+            <li>Conducted dam safety reviews for tailings storage facilities and analysed geotechnical instrumentation — piezometers and inclinometers — across four major facilities.</li>
+            <li>Developed and reviewed geotechnical designs for tailings dams, waste dumps and associated infrastructure, integrating investigation data, seepage and foundation assessments and numerical modelling.</li>
+            <li>Monitored geotechnical performance using robotic total stations, InSAR and seismic monitoring within Vale's regional Geotechnical Monitoring Centre, supporting TARP verification.</li>
+            <li>Provided operational geotechnical support to open-pit operations, including pit wall inspections and slope stability assessments.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-years">2019 — 2021</div>
+          <div class="tl-node"></div>
+          <div class="tl-role">Underground Geotechnical Engineer</div>
+          <div class="tl-org">Nexa Resources</div>
+          <div class="tl-meta">Brazil · Underground zinc mine</div>
+          <ul>
+            <li>Ensured short-, medium- and long-term ground stability for Brazil's largest underground zinc mine, in a highly karstified aquifer environment.</li>
+            <li>Led the geotechnical investigation and recovery of the Extremo Norte access ramp after ground displacement threatened the mine's sole personnel egress route — detailed under Featured Projects.</li>
+            <li>Reduced shotcrete re-entry time by 50% through mix redesign, cement selection and quality control — detailed under Featured Projects.</li>
+            <li>Designed and implemented ground support schemes using RS2/RS3 numerical modelling alongside empirical methods, and built/maintained geomechanical models in Leapfrog.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-years">2018 — 2019</div>
+          <div class="tl-node"></div>
+          <div class="tl-role">Mining Engineer — Drilling &amp; Blasting</div>
+          <div class="tl-org">Nexa Resources</div>
+          <div class="tl-meta">Brazil · Underground zinc mine</div>
+          <ul>
+            <li>Supported mining and development operations in a deep underground zinc mine with more than 17 km of annual development.</li>
+            <li>Drove a productivity turnaround on an ageing drill rig, achieving a site drilling record of 9,038 m in 30 days and a 79% increase in OEE — recognised publicly by Sandvik.</li>
+            <li>Structured a SQL database and built Power BI dashboards for real-time fleet management visibility, at no additional cost to the company.</li>
+            <li>Led a tyre-cost reduction initiative through calibration control, achieving a 21.5% reduction in tyre costs with no impact on production — published in ForScience (2023).</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-years">2017</div>
+          <div class="tl-node"></div>
+          <div class="tl-role">Exploration Geologist</div>
+          <div class="tl-org">Monier</div>
+          <div class="tl-meta">France</div>
+          <ul>
+            <li>Researched and developed sand quality processes for tile manufacturing.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-years">2011 — 2012</div>
+          <div class="tl-node"></div>
+          <div class="tl-role">Chemical Laboratory Technician</div>
+          <div class="tl-org">ArcelorMittal Belgo</div>
+          <div class="tl-meta">Brazil</div>
+          <ul>
+            <li>Performed chemical analyses to support quality control in industrial steel wire production.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <span class="kicker">Featured projects</span>
+      <h2>Selected engineering work</h2>
+      <p class="lede" style="margin-top:14px;">Four pieces of work that show how the same underlying discipline — ground behaviour interpretation, data-led decision making, and cross-team coordination — plays out across a crisis response, a materials-engineering problem, an academic research project and an operational cost initiative.</p>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="project-head"><span class="p-num">01</span><span class="p-org">Nexa Resources</span></div>
+          <div class="project-body">
+            <h3>Extremo Norte access ramp rehabilitation</h3>
+            <div class="project-loc">Vazante Mine, Brazil · March – August 2021</div>
+            <p>When ground displacement was identified in the mine's only personnel access and emergency egress route, she led the technical response — interpreting the cracking and its likely cause, directing a multi-instrument monitoring programme (crack meters, extensometers, laser points, inclinometers), and managing the full operational execution of a five-stage rehabilitation combining cable bolting, shotcrete, spiling and steel arch sets across several hundred metres of underground access. She took on sole geotechnical accountability for the area partway through the project and coordinated directly with operations to keep the programme progressing without halting wider mine production.</p>
+            <span class="project-stat">Access route fully restored, August 2021</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head"><span class="p-num">02</span><span class="p-org">Nexa Resources</span></div>
+          <div class="project-body">
+            <h3>Shotcrete re-entry time optimisation</h3>
+            <div class="project-loc">Vazante Mine, Brazil</div>
+            <p>Reviewed and redesigned the mine's steel fibre-reinforced shotcrete system end to end — cement selection, admixture dosing, laboratory characterisation, full-scale batching trials and field strength verification with penetrometer readings underground — to establish a mix and control system that reached adequate early strength faster, without compromising ground support performance.</p>
+            <span class="project-stat">Re-entry time cut from 6 to 3 hours</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head"><span class="p-num">03</span><span class="p-org">University of São Paulo</span></div>
+          <div class="project-body">
+            <h3>Stope dilution prediction calibration</h3>
+            <div class="project-loc">Master's thesis, using Vazante Mine data (2019–2022)</div>
+            <p>Built a site-specific statistical correction for the industry-standard Mathews-Potvin stability graph, using more than 400 cavity-monitoring surveys across cable-bolted, non-cable-bolted and self-supported stopes. Linear regression and correlation analysis confirmed the graph performs well once reinforcement is installed, but systematically overestimates dilution in unsupported ground — and the calibration equations she derived meaningfully improved prediction accuracy.</p>
+            <span class="project-stat">~20% lower prediction error overall, up to 29% in unsupported ground</span>
+            <div style="margin-top:14px;"><a class="pub-link" href="https://teses.usp.br/teses/disponiveis/3/3134/tde-17042026-112454/pt-br.html" target="_blank">Read the thesis →</a></div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head"><span class="p-num">04</span><span class="p-org">Nexa Resources</span></div>
+          <div class="project-body">
+            <h3>Tyre cost reduction initiative</h3>
+            <div class="project-loc">Underground zinc mine, Brazil</div>
+            <p>Led a calibration-control and operational best-practice programme to cut tyre costs on the underground haulage fleet, run alongside a productivity turnaround on an ageing drill rig that set a site drilling record and lifted equipment OEE — improvements recognised publicly by Sandvik.</p>
+            <span class="project-stat">21.5% tyre cost reduction, no production impact</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section class="section section-alt" id="publications">
+    <div class="container">
+      <span class="kicker">Publications</span>
+      <h2>Peer-reviewed work</h2>
+
+      <div style="margin-top:38px;">
+        <div class="pub-item">
+          <div class="pub-year">2025</div>
+          <div>
+            <div class="pub-title">Predictability and Impact of Structural Reinforcement on Unplanned Dilution in Sublevel Stoping Operations</div>
+            <div class="pub-venue">Resources (MDPI)</div>
+            <a class="pub-link" href="https://www.mdpi.com/2079-9276/14/7/104" target="_blank">Read the paper →</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2023</div>
+          <div>
+            <div class="pub-title">Controles de calibragem e boas práticas na mineração para a redução do custo de pneus em caminhões fora-de-estrada</div>
+            <div class="pub-venue">ForScience — Calibration control and best practices for tyre cost reduction in off-road mining trucks</div>
+            <a class="pub-link" href="https://www.researchgate.net/publication/369464773_Controles_de_calibragem_e_boas_praticas_na_mineracao_para_a_reducao_do_custo_de_pneus_em_caminhoes_fora-de-estrada" target="_blank">Read the paper →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERTISE ============ -->
+  <section class="section section-navy" id="expertise">
+    <div class="container">
+      <span class="kicker">Expertise</span>
+      <h2>Technical areas</h2>
+
+      <div class="expertise-grid">
+        <div class="expertise-group">
+          <h4>Ground support &amp; strata control</h4>
+          <div class="tag-row">
+            <span class="tag">CMRR</span><span class="tag">ALTS</span><span class="tag">Empirical &amp; numerical design</span><span class="tag">Cable bolting</span><span class="tag">Shotcrete</span>
+          </div>
+        </div>
+        <div class="expertise-group">
+          <h4>Numerical &amp; geological modelling</h4>
+          <div class="tag-row">
+            <span class="tag">RS2 / RS3</span><span class="tag">Slide2</span><span class="tag">Wedge</span><span class="tag">Leapfrog</span><span class="tag">Deswik</span><span class="tag">GEM4D</span><span class="tag">Map3D</span>
+          </div>
+        </div>
+        <div class="expertise-group">
+          <h4>Monitoring &amp; risk frameworks</h4>
+          <div class="tag-row">
+            <span class="tag">PHMP</span><span class="tag">TARPs</span><span class="tag">GISTM</span><span class="tag">Robotic total stations</span><span class="tag">InSAR</span><span class="tag">Radar</span><span class="tag">Extensometers</span>
+          </div>
+        </div>
+        <div class="expertise-group">
+          <h4>Mining methods &amp; data</h4>
+          <div class="tag-row">
+            <span class="tag">Open Stope</span><span class="tag">VRM</span><span class="tag">Sublevel Stope</span><span class="tag">Room &amp; Pillar</span><span class="tag">Longwall</span><span class="tag">Power BI</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION & TRAINING ============ -->
+  <section class="section" id="education">
+    <div class="container">
+      <span class="kicker">Education</span>
+      <h2>Degrees &amp; training</h2>
+
+      <div style="margin-top:38px;">
+        <div class="edu-item">
+          <div class="edu-degree">M.Sc. in Mining Engineering — Geotechnical Engineering</div>
+          <div class="edu-school">University of São Paulo (Polytechnic School), Brazil</div>
+          <div class="edu-meta">2022–2025 · Research focus: geotechnical assessment and dilution predictability in underground sublevel stoping</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Master's Degree in Mineral Resources — Mining and Geological Storage (GPRE)</div>
+          <div class="edu-school">École Nationale Supérieure des Mines de Nancy, France</div>
+          <div class="edu-meta">2016–2017</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Postgraduate Specialisation in Geotechnical Engineering — Dams</div>
+          <div class="edu-school">Pontifical Catholic University of Minas Gerais (PUC Minas), Brazil</div>
+          <div class="edu-meta">2020–2021</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">B.Eng. in Mining Engineering</div>
+          <div class="edu-school">Federal University of Minas Gerais (UFMG), Brazil</div>
+          <div class="edu-meta">2012–2018</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Technical Certificate in Industrial Chemistry</div>
+          <div class="edu-school">Federal Centre for Technological Education of Minas Gerais (CEFET-MG), Brazil</div>
+          <div class="edu-meta">2009–2012</div>
+        </div>
+      </div>
+
+      <div class="train-wrap">
+        <table class="train-table">
+          <thead>
+            <tr><th>Training / certification</th><th>Institution</th><th>Year</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ALTS (Analysis of Longwall Tailgate Serviceability)</td><td>Anglo American</td><td>2024</td></tr>
+            <tr><td>CMRR (Coal Mine Roof Rating)</td><td>Anglo American</td><td>2024</td></tr>
+            <tr><td>S11 — Underground Coal</td><td>Queensland, Australia</td><td>2023</td></tr>
+            <tr><td>S11 — Surface Mining</td><td>Queensland, Australia</td><td>2023</td></tr>
+            <tr><td>Risk Management Training</td><td>Anglo American, Australia</td><td>2023</td></tr>
+            <tr><td>Occupational Health &amp; Safety Training</td><td>Anglo American, Brisbane, QLD</td><td>2023</td></tr>
+            <tr><td>Mining Supervisor — S1, S2 &amp; S3</td><td>Queensland, Australia</td><td>2023</td></tr>
+            <tr><td>Leapfrog Geo + Hydro — Fundamentals &amp; Advanced</td><td>Seequent</td><td>2021</td></tr>
+            <tr><td>Rock Engineering — Underground Mine Instrumentation</td><td>ROCK ENG</td><td>2021</td></tr>
+            <tr><td>Applied Rock Mechanics for Geomechanical Analysis &amp; Modelling</td><td>Institute of Mining Engineers of Peru &amp; McGill University</td><td>2020</td></tr>
+            <tr><td>Drilling &amp; Blasting</td><td>Ietec Brazil — Institute of Technological Education</td><td>2019</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-navy" id="contact">
+    <div class="container">
+      <span class="kicker">Contact</span>
+      <h2>Let's talk about a role</h2>
+      <p class="lede" style="margin-top:14px;">Open to geotechnical engineering opportunities in underground and open-pit mining. The fastest ways to reach me:</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="c-label">Email</span>
+          <a class="c-value" href="mailto:thaisjanine7@gmail.com">thaisjanine7@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <span class="c-label">Phone</span>
+          <a class="c-value" href="tel:+61467069727">+61 0467 069 727</a>
+        </div>
+        <div class="contact-card">
+          <span class="c-label">LinkedIn</span>
+          <a class="c-value" href="https://www.linkedin.com/in/thais-janine" target="_blank">linkedin.com/in/thais-janine</a>
+        </div>
+        <div class="contact-card">
+          <span class="c-label">Location</span>
+          <span class="c-value">Perth, WA · available for FIFO</span>
+        </div>
+        <div class="contact-card">
+          <span class="c-label">Work rights</span>
+          <span class="c-value">Australian Permanent Resident</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container footer-inner">
+      <p class="footer-brand">Thaís<span>.</span>Janine</p>
+      <p class="footer-copy">© 2026 Thaís Janine. Geotechnical Engineer · Brazil · France · Australia</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
